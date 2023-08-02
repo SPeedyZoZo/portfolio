@@ -1,12 +1,21 @@
 export const projects = [
   {
     title: 'Paw Troopers',
-    description: "Worked on my mobile 2D strategy defense game, Paw Troopers. Used Unity, Jira, Adobe Illustrator and managed various teams to help bring this game to fruition.",
+    description: "A cute, challenging 2D tower defense game, made using Unity. My first insight into using Jira for a large scale project.",
       image: '/images/1.png',
       tags: ['Unity', 'Jira', 'C#', 'Adobe Illustrator'],
     source: '',
     visit: '',
     id: 0,
+  },
+  {
+    title: 'ShapeTime Continuum',
+    description: "A simplistic 3rd person perspective autobattling roguelike, planned to be extremely user customisable. Developed and designed entirely as a solo project using Unity.",
+      image: '/images/2.png',
+      tags: ['Unity', 'C#', "Adobe Illustrator"],
+    source: '',
+    visit: '',
+    id: 1,
   },
 ];
 

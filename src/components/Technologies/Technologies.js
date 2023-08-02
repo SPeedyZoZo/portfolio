@@ -8,7 +8,7 @@ const Technologies = () =>  (
     <br />
       <SectionTitle>Technologies</SectionTitle>
       <SectionText>
-        I've worked with many technologies, from design tools such as Adobe Illustrator and Adobe XD, to project management tools like Jira and Slack.
+        I've worked with many technologies, from design tools such as Adobe Illustrator and Adobe XD, to project management tools like Jira, Trello, Asana and Slack, to delving into frontend alongside React.js, Node.js and HTML/CSS.
         I am also adept in game development, using Unity and C#.
       </SectionText>
       <List>

@@ -17,6 +17,24 @@ export const projects = [
     visit: '',
     id: 1,
   },
+  {
+    title: 'Trip Planning Weather App',
+    description: "Weather App developed and designed to help teachers plan school trips according to weather data, as a group project part of my university GUI module. Designed all the UI myself and helped code the frontend using Preact (as required by the module).",
+      image: '/images/3.png',
+      tags: ['Node.js', "Preact/React", 'JavaScript', "Gitbash", 'Adobe Illustrator', 'HTML/CSS'],
+    source: '',
+    visit: '',
+    id: 2,
+  },
+  {
+    title: 'FDM Expense Management App',
+    description: "A reimbursement and expense management app for the company FDM. This was a group project part of my university SWE module. Developed using JavaScript.",
+      image: '/images/4.png',
+      tags: ['React', 'Node.js', 'JavaScript', "Adobe Illustrator", 'HTML/CSS'],
+    source: '',
+    visit: '',
+    id: 3,
+  },
 ];
 
 export const TimeLineData = [

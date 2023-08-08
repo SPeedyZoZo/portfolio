@@ -1,0 +1,29 @@
+.animationContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeOut 0.5s ease-in 3s 1 forwards;
+    z-index: 9999;
+  }
+  
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  .svgAnimation {
+    /* Adjust the SVG styling as needed */
+    background-color: #000;
+    width: 100%; /* Stretch the SVG animation to fill the container width */
+    height: 100%; /* Stretch the SVG animation to fill the container height */
+  }
+  

@@ -1,0 +1,21 @@
+.mouseGlow {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s ease-out;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 195, 255, 1) 20%,
+    rgba(60, 209, 255, 0) 50%
+  );
+  opacity: 0;
+  z-index: 9999;
+}
+
+.mouseGlow.active {
+  opacity: 100;
+  transition: opacity 0s ease-out;
+}

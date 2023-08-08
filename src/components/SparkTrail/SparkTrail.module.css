@@ -1,0 +1,43 @@
+/* SparkTrail.module.css */
+.sparkTrail {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9998;
+    cursor: none; /* Hide the mouse cursor */
+  }
+  
+  .spark {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(0, 174, 255);
+    transform: scale(1);
+    animation: sparkle 0.3s ease-in-out forwards, fadeOut 1s ease-in-out forwards;
+  }
+  
+  @keyframes sparkle {
+    0%, 100% {
+      transform: scale(0);
+    }
+    0% {
+        background-color: rgb(255, 255, 255); /* Change color to white */
+      transform: scale(1);
+
+    }
+  }
+  
+  @keyframes fadeOut {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+    .no-spark-trail {
+        display: none;
+    }

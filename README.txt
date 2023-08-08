@@ -5,6 +5,7 @@ Changelog:
 v1.0.2
 - Added 'white hot' cursor trail which follows mouse
 - Added 'blue glow' effect on mouse click
+- Added a brief start up animation on site load
 
 v1.0.1
 - Added new projects with corresponding tags and descriptions for each project:

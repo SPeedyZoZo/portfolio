@@ -6,8 +6,20 @@ const MouseGlow = () => {
   const [isActive, setIsActive] = useState(false);
   let fadeTimeout;
 
-  const handleMouseClick = (event) => {
-    const { clientX, clientY } = event;
+  const handleMouseOrTouch = (event) => {
+    // Determine the event type based on the event properties
+    const eventType = event.type === 'click' ? 'mouse' : 'touch';
+
+    // Get the appropriate event coordinates based on the event type
+    let clientX, clientY;
+    if (eventType === 'mouse') {
+      clientX = event.clientX;
+      clientY = event.clientY;
+    } else if (eventType === 'touch') {
+      clientX = event.touches[0].clientX;
+      clientY = event.touches[0].clientY;
+    }
+
     setGlowPosition({ x: clientX, y: clientY });
 
     // Clear the previous fade timeout if it exists
@@ -24,11 +36,13 @@ const MouseGlow = () => {
   };
 
   useEffect(() => {
-    document.addEventListener('click', handleMouseClick);
+    document.addEventListener('click', handleMouseOrTouch);
+    document.addEventListener('touchstart', handleMouseOrTouch);
 
     return () => {
-      document.removeEventListener('click', handleMouseClick);
-      
+      document.removeEventListener('click', handleMouseOrTouch);
+      document.removeEventListener('touchstart', handleMouseOrTouch);
+
       // Clear the fade timeout when the component unmounts
       if (fadeTimeout) {
         clearTimeout(fadeTimeout);

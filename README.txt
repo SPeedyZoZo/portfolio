@@ -2,6 +2,10 @@
 
 Changelog:
 
+v1.0.2 hotfix
+
+- Testing 'blue glow' effect on mobile and PC devices
+
 v1.0.2
 - Added 'white hot' cursor trail which follows mouse
 - Added 'blue glow' effect on mouse click

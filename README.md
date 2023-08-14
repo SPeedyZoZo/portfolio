@@ -1,6 +1,7 @@
 # Personal Portfolio
 ## USE NODE VERSION 14.0.0 ONLY
 
+
 ## Planned Features:
 - Add blog for suggestions to be made directly on the website
 - Add a check box to enable the mouse trail

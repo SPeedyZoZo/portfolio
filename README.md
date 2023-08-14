@@ -1,17 +1,28 @@
-## Personal Portfolio
+# Personal Portfolio
+## USE NODE VERSION 14.0.0 ONLY
 
-Changelog:
+## Planned Features:
+- Add blog for suggestions to be made directly on the website
+- Add a check box to enable the mouse trail
+    - Make the mouse trail default to invisible when you open the website
 
-v1.0.2 hotfix
+## Changelog:
+
+### v1.0.3
+
+- Added visit buttons to projects which send to websites accordingly
+    - Successfully linked the Paw Troopers website to the project visit page at: https://pawtroopers.com
+
+### v1.0.2 hotfix
 
 - Fixed all animation effects on mobile and PC devices
 
-v1.0.2
+### v1.0.2
 - Added 'white hot' cursor trail which follows mouse
 - Added 'blue glow' effect on mouse click
 - Added a brief start up animation on site load
 
-v1.0.1
+### v1.0.1
 - Added new projects with corresponding tags and descriptions for each project:
     - Added 'ShapeTime Continuum' Project
     - Added 'Trip Planning Weather App' Project
@@ -24,6 +35,6 @@ v1.0.1
     - Added '12 Years Since I Started Learning To Code'
     - Added '0 signs of slowing down :)'
 
-v1.0.0
+### v1.0.0
 - Created website.
 - Published all content on subdomain https://zaid.netreviews.ai/

@@ -5,7 +5,7 @@ export const projects = [
       image: '/images/1.png',
       tags: ['Unity', 'Jira', 'C#', 'Adobe Illustrator'],
     source: '',
-    visit: '',
+    visit: 'https://pawtroopers.com',
     id: 0,
   },
   {
@@ -23,7 +23,7 @@ export const projects = [
       image: '/images/3.png',
       tags: ['Node.js', "Preact", 'JavaScript', 'HTML/CSS'],
     source: '',
-    visit: '',
+    visit: 'https://github.com/SPeedyZoZo/Weather-App',
     id: 2,
   },
   {
@@ -32,7 +32,7 @@ export const projects = [
       image: '/images/4.png',
       tags: ['React', 'Node.js', 'JavaScript', "Adobe Illustrator"],
     source: '',
-    visit: '',
+    visit: 'https://github.com/SPeedyZoZo/FDM-App',
     id: 3,
   },
 ];

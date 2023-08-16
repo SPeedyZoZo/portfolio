@@ -8,7 +8,6 @@
     - Make the mouse trail default to invisible when you open the website
 
 ## Changelog:
-
 ### v1.0.3
 
 - Added visit buttons to projects which send to websites accordingly

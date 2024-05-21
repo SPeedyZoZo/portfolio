@@ -31,9 +31,9 @@ export const BlogCard = styled.div`
   @media ${(props) => props.theme.breakpoints.sm} {
     width: 100%;
   }
-  transition: all 0.4s ease;
+  transition: all 0.5s ease;
   &:hover {
-    transform: translateY(-3px);
+    transform: translateY(-6px);
     box-shadow: 6px 6px 20px rgba(128, 128, 128, 0.5);
   }
 

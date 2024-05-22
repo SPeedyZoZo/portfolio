@@ -1,27 +1,39 @@
-import Acomplishments from '../components/Acomplishments/Acomplishments';
-import BgAnimation from '../components/BackgrooundAnimation/BackgroundAnimation';
-import Hero from '../components/Hero/Hero';
-import Projects from '../components/Projects/Projects';
-import Technologies from '../components/Technologies/Technologies';
-import Timeline from '../components/TimeLine/TimeLine';
+import dynamic from 'next/dynamic';
+
+const Acomplishments = dynamic(() => import('../components/Acomplishments/Acomplishments'), {
+  ssr: false,
+});
+const BgAnimation = dynamic(() => import('../components/BackgrooundAnimation/BackgroundAnimation'), {
+  ssr: false,
+});
+const Hero = dynamic(() => import('../components/Hero/Hero'), {
+  ssr: false,
+});
+const Projects = dynamic(() => import('../components/Projects/Projects'), {
+  ssr: false,
+});
+const Technologies = dynamic(() => import('../components/Technologies/Technologies'), {
+  ssr: false,
+});
+const Timeline = dynamic(() => import('../components/TimeLine/TimeLine'), {
+  ssr: false,
+});
 
 import { Layout } from '../layout/Layout';
 import { Section } from '../styles/GlobalComponents';
 
 const Home = () => {
   return (
-
     <Layout>
       <Section grid>
         <Hero />
-        <BgAnimation />          
+        <BgAnimation />
       </Section>
       <Projects />
       <Technologies />
       <Timeline />
       <Acomplishments />
     </Layout>
-
   );
 };
 

@@ -47,7 +47,7 @@ const Timeline = () => {
       <SectionTitle>Timeline</SectionTitle>
       <SectionText>
         Creativity and improvisation has always been mind-boggling for me. <br/>
-        My first true encounter with programming was 8 years ago with the Unity3d Game Design Engine. <br/>
+        My first true encounter with programming was almost 10 years ago with the Unity Game Design Engine. <br/>
         I instantly fell in love, and learned to make a few basic projects. I had even started a basic Game Development club that same year in my school.<br/>
         Since then, I have shifted less from game design and more towards a corporate aspect of the polish and professionalism of web development. 
       </SectionText>

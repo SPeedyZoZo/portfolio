@@ -12,14 +12,24 @@
 
 
 ## Changelog:
-### v1.0.5
+### v1.0.5 - *May 30, 2024*
+- Added some more projects with photos, mostly from my 3rd year of University:
+  - VisualPromptBuilder
+  - ImmunoFortress
+  - Spotify Web API Playlist/Song Analyser
+  - LearnerLens
+- Removed sunsetted projects
+- Updated any time frames which were out of date
+- Renamed all mentions of 'Unity3d' to be simply called 'Unity'
+- Added two more years to the timeline, 2024 and 2025, and updated 2023
 
 ### v1.0.4 - *May 21, 2024*
-- Updated and added favicons.
-- Added hover and click effects to the project cards.
-- Added minimum height and fit images for project cards. Added a break line between project stack and project description.
-- Updated phone number.
-- Hidden cursor.
+- Updated and added favicons
+- Added hover and click effects to the project cards
+- Added minimum height and fit images for project cards. Added a break line between project stack and project description
+- Updated phone number
+- Hidden cursor
+- Changed website logo slightly
 
 
 ### v1.0.3 - *Aug 15, 2023*

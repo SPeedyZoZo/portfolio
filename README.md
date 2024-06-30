@@ -12,6 +12,10 @@
 
 
 ## Changelog:
+
+### v1.1.0 - *June 30, 2024*
+- Added Plerdy tracking integration (for testing)
+
 ### v1.0.5 - *May 30, 2024*
 - Added some more projects with photos, mostly from my 3rd year of University:
   - VisualPromptBuilder

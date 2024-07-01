@@ -52,20 +52,6 @@ export default class MyDocument extends Document {
               `,
             }}
           />
-          {/* Plerdy A/B Testing Code */}
-          <script
-            type="text/javascript"
-            dangerouslySetInnerHTML={{
-              __html: `
-                var _suid=52165;
-              `,
-            }}
-          />
-          <script
-            async
-            type="text/javascript"
-            src="https://a.plerdy.com/public/js/click/plerdy_ab-min.js?v=e141e41"
-          />
         </Head>
         <body>
           <Main />

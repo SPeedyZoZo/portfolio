@@ -5,7 +5,7 @@
 *[High Priority]*
 ~~- Need to add more projects (everything from 3rd year uni and more)~~
 ~~- Update everything to display that I am no longer a university student~~
-- Include current work projects
+~~- Include current work projects~~
 
 *[Low Priority]*
 - Add a check box to enable the mouse trail
@@ -14,6 +14,19 @@
 
 
 ## Changelog:
+
+### v1.2.0 - *August 1, 2026*
+- Added a new "Experience" section with current and past work history:
+  - Robiquity (Associate Technical Consultant)
+  - Freelance (Automation and AI Engineer)
+  - ProspHER (Team Leader, US Market Expansion)
+  - KAPSARC (Mobile Application Tester)
+- Added a Certifications list (PL-900, Copilot Studio, Caltech AI/ML, Google UX, Purdue Gen AI, UiPath)
+- Rewrote homepage bio to reflect current role instead of "recent graduate" framing
+- Updated Technologies section to include Power Platform, RPA, UiPath, Copilot Studio, Python, LangChain and Azure OpenAI
+- Updated timeline entries for 2024 and 2025 to reflect graduation, freelance work, and joining Robiquity
+- Added "Experience" link to site navigation
+- Fixed footer LinkedIn/Instagram links to point to correct profiles
 
 ### v1.1.0 - *June 30, 2024*
 - Added Google Analytics integration (for testing) *September 19, 2024*

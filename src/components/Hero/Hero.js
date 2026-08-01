@@ -14,7 +14,8 @@ const Hero = () => (
       </SectionTitle>
       <SectionText style = {{fontSize: "1.5rem"}}>
       Welcome to my portfolio!<br/>
-      As a recent university graduate with a strong drive for AI engineering, full-stack development, and a side hobby of game development, I'm constantly seeking new challenges and opportunities to grow. My studies at university have provided me with a strong foundation in HTML, CSS, TypeScript, and user-centered design principles. After graduating, I have focused my sights more towards the AI/ML field, pursuing multiple specialisation courses concurrently.
+      I'm a Technical Consultant specialising in Microsoft Power Platform, Robotic Process Automation, and Applied AI, delivering end-to-end digital transformations for clients across financial services, healthcare, and logistics. I combine a First-Class foundation in Computer Science with hands-on enterprise consulting experience, spanning RPA migrations, Power Apps development, and Copilot Studio conversational agents.
+      Alongside my consulting work, I take on freelance automation and AI engineering projects, building API pipelines and applied AI tools, and I'm currently deepening my AI/ML expertise through postgraduate study.
       My hunger to learn new concepts and adapt to changes in the industry, along with my motivation to make a lasting impact for society, push me to consistently persevere outside of my comfort zone.<br/>
       Take a look around to learn more about me and my work. Let's connect and see how we can work together to achieve great things!
       </SectionText>

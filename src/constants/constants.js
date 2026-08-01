@@ -10,7 +10,7 @@ export const projects = [
   },
   {
     title: 'VisualPromptBuilder',
-    description: "VisualPromptBuilder is my final year university project; a responsive web app designed to help nonverbal and cognitively disabled individuals communicate. It allows users to construct sentences using pictograms, which are then translated and vocalized in multiple languages.",
+    description: "VisualPromptBuilder is my final year university project/dissertation, graded at 90.5%; a responsive web app designed to help nonverbal and cognitively disabled individuals communicate. It allows users to construct sentences using pictograms, which are then translated and vocalized in multiple languages.",
     image: '/images/8.png',
     tags: ['TypeScript', 'Next.js', 'Web Speech APIs', 'Translation APIs'],
     source: '',
@@ -84,6 +84,66 @@ export const TimeLineData = [
   { year: 2021, text: 'Worked as Director of Media and Graphic Design, increasing work load while managing a team of designers', },
   { year: 2022, text: 'Developed and worked on many projects which honed my passion and skillset for web development and UI/UX design', },
   { year: 2023, text: 'Completed more group and solo projects, solidifying my specialty in front-end design and development', },
-  { year: 2024, text: 'Graduated University, prepared to enter the workforce... and whatever awaits beyond', },
-  { year: 2025, text: 'More coming soon...' }
+  { year: 2024, text: 'Graduated University with a First-Class final year project, then began freelance automation and AI engineering work', },
+  { year: 2025, text: 'Joined Robiquity as an Associate Technical Consultant, delivering RPA, Power Platform, and applied AI projects for enterprise clients', },
+];
+
+export const workExperience = [
+  {
+    company: 'Robiquity',
+    location: 'Manchester, UK (Hybrid)',
+    role: 'Associate Technical Consultant',
+    period: '2025 – Present',
+    points: [
+      'Architected a large-scale legacy RPA migration from Blue Prism to Power Automate Desktop and Cloud Flows for Fidelity, cutting licensing costs by an estimated 30%.',
+      'Spearheaded the UI/UX redesign of Canvas and Model-Driven Power Apps for NHS Scotland, writing custom JavaScript web resources for dynamic UI rendering.',
+      'Designed and deployed a Microsoft Copilot Studio conversational agent for HR policy management to drive internal AI adoption.',
+      'Conducted R&D on custom MCP hosting and agentic LLMs for secure, privacy-focused enterprise environments.',
+      'Managed UAT and hypercare pipelines and trained 50+ enterprise stakeholders, achieving a 100% satisfaction rating.',
+    ],
+    id: 0,
+  },
+  {
+    company: 'Freelance',
+    location: 'Remote, UK',
+    role: 'Automation and AI Engineer',
+    period: 'June 2024 – Present',
+    points: [
+      'Increased a client team\'s workflow efficiency by 200% by engineering automated API pipelines and web-scraped data storage.',
+      'Built a scalable data extraction pipeline using the Google Gemini API to parse and query metadata from over 200 million academic PDF journals.',
+      'Integrated web tracking analytics with Google Analytics and Supabase to drive data-backed UX improvements.',
+    ],
+    id: 1,
+  },
+  {
+    company: 'ProspHER',
+    location: 'Remote, UK',
+    role: 'Team Leader, US Market Expansion Project',
+    period: 'August 2024',
+    points: [
+      'Directed a research consultancy team of 5 to formulate a sustainable US market expansion strategy for an SME.',
+      'Oversaw financial and technical analysis, culminating in a presentation pitching AI, CRM, and workflow automation adoption.',
+    ],
+    id: 2,
+  },
+  {
+    company: 'KAPSARC',
+    location: 'Riyadh, Saudi Arabia',
+    role: 'Mobile Application Tester (Volunteering)',
+    period: 'July 2018 – August 2018',
+    points: [
+      'Served as the sole dedicated tester for a mobile application supporting 500+ users across iOS and Android.',
+      'Identified, tracked, and reported over 50 software bugs using Jira and TestFlight ahead of institutional rollout.',
+    ],
+    id: 3,
+  },
+];
+
+export const certifications = [
+  'Microsoft Certified: Power Platform Fundamentals (PL-900)',
+  'Microsoft Applied Skills: Create agents in Microsoft Copilot Studio',
+  'Post Graduate Program in AI and Machine Learning – Caltech (Ongoing)',
+  'Google UX Design Professional Certificate – Google',
+  'Applied Generative AI Specialization – Purdue University',
+  'Automation Developer Associate Training – UiPath Academy',
 ];

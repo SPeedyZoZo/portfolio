@@ -6,6 +6,9 @@ const Acomplishments = dynamic(() => import('../components/Acomplishments/Acompl
 const BgAnimation = dynamic(() => import('../components/BackgrooundAnimation/BackgroundAnimation'), {
   ssr: false,
 });
+const Experience = dynamic(() => import('../components/Experience/Experience'), {
+  ssr: false,
+});
 const Hero = dynamic(() => import('../components/Hero/Hero'), {
   ssr: false,
 });
@@ -29,6 +32,7 @@ const Home = () => {
         <Hero />
         <BgAnimation />
       </Section>
+      <Experience />
       <Projects />
       <Technologies />
       <Timeline />

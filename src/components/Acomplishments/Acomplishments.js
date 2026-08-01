@@ -5,8 +5,9 @@ import { Box, Boxes, BoxNum, BoxText } from './AcomplishmentsStyles';
 
 const data = [
   { number: 8, text: 'Projects Worked On (and counting)'},
+  { number: 2, text: 'Years Since I Started Learning AI/ML'},
+  { number: 6, text: 'Years Since I Started Learning Full-Stack and UI/UX', },
   { number: 9, text: 'Years Since I Started Learning Unity'},
-  { number: 6, text: 'Years Since I Started Learning UI/UX', },
   { number: 13, text: 'Years Since I Started Learning To Code', },
   { number: 0, text: 'signs of slowing down :)', },
 ];

@@ -1,8 +1,33 @@
 import React from 'react';
+import styled from 'styled-components';
+import { useSettings } from '../../context/SettingsContext';
 
-const BackgroundAnimation = () => (
-  
-  <div>
+const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+
+  svg {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+  }
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    display: none;
+  }
+`;
+
+const BackgroundAnimation = () => {
+  const { settings } = useSettings();
+
+  if (!settings.backgroundMotionEnabled) return null;
+
+  return (
+  <Wrapper>
     <svg
       className="BgAnimation__svg"
       viewBox="0 0 602 602"
@@ -360,7 +385,8 @@ const BackgroundAnimation = () => (
         </linearGradient>
       </defs>
     </svg>
-  </div>
-);
+  </Wrapper>
+  );
+};
 
 export default BackgroundAnimation;

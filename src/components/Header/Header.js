@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
 import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
-import { DiCssdeck } from 'react-icons/di';
 
 import { Container, Div1, Div2, Div3, NavLink, SocialIcons, Span } from './HeaderStyles';
 
@@ -16,23 +15,28 @@ const Header = () =>  (
       </Div1>
     <Div2>
       <li>
-        <Link href="#experience">
+        <Link href="#experience" passHref>
           <NavLink>Experience</NavLink>
         </Link>
       </li>
       <li>
-        <Link href="#projects">
+        <Link href="#projects" passHref>
           <NavLink>Projects</NavLink>
         </Link>
       </li>
       <li>
-        <Link href="#tech">
+        <Link href="#tech" passHref>
           <NavLink>Technologies</NavLink>
         </Link>
       </li>
       <li>
-        <Link href="#about">
+        <Link href="#about" passHref>
           <NavLink>About</NavLink>
+        </Link>
+      </li>
+      <li>
+        <Link href="#contact" passHref>
+          <NavLink>Contact</NavLink>
         </Link>
       </li>
     </Div2>

@@ -19,7 +19,7 @@ const GlobalStyles = createGlobalStyle`
     font-size: 1.6rem;
     background: ${props => props.theme.colors.background1};
     color: ${props => props.theme.colors.primary1};
-    cursor: none;
+    cursor: ${props => props.theme.cursorHidden ? 'none' : 'auto'};
 
   }
   h1,h2,h3,h5,h6 {
@@ -35,6 +35,14 @@ const GlobalStyles = createGlobalStyle`
   }
   li{
     list-style: none;
+  }
+
+  /* Components turn off the default :focus outline for a cleaner mouse-click
+     appearance; restore a visible indicator for keyboard/assistive-tech users. */
+  :focus-visible {
+    outline: 2px solid #13ADC7 !important;
+    outline-offset: 3px !important;
+    border-radius: 2px;
   }
 
 `;

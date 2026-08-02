@@ -27,7 +27,10 @@ export const BlogCard = styled.div`
   box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
   text-align: center;
   width: 400px;
-  min-height: 700px;
+  min-height: 560px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   @media ${(props) => props.theme.breakpoints.sm} {
     width: 100%;
   }
@@ -56,7 +59,7 @@ export const HeaderThree = styled.h4`
   letter-spacing: 2px;
   color: #9cc9e3;
   padding: .5rem 0;
-  font-size: ${(props) => props.title ? '3rem' : '2rem'};
+  font-size: ${(props) => props.$large ? '3rem' : '2rem'};
 `;
 
 export const Hr = styled.hr`
@@ -97,7 +100,9 @@ export const UtilityList = styled.ul`
   padding: 0;
   display: flex;
   justify-content: space-around;
-  margin: 2.5rem 0;
+  margin: 2.5rem 0 1.5rem;
+  margin-top: auto;
+  min-height: 48px;
 `;
 
 export const ExternalLinks = styled.a`

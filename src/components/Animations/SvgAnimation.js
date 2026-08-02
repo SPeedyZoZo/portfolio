@@ -1,17 +1,22 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './SvgAnimation.module.css'; // Update the path to your CSS file
+import { useSettings } from '../../context/SettingsContext';
 
 const SvgAnimation = () => {
+  const { settings } = useSettings();
+  const [played, setPlayed] = useState(false);
+
   useEffect(() => {
+    if (!settings.introAnimationEnabled || played) return undefined;
+
     const removeAnimation = setTimeout(() => {
-      const animationContainer = document.querySelector(`.${styles.animationContainer}`);
-      if (animationContainer) {
-        animationContainer.remove();
-      }
+      setPlayed(true);
     }, 7000);
 
     return () => clearTimeout(removeAnimation);
-  }, []);
+  }, [settings.introAnimationEnabled, played]);
+
+  if (!settings.introAnimationEnabled || played) return null;
 
   return (
     <div className={styles.animationContainer}>
@@ -34,7 +39,7 @@ const SvgAnimation = () => {
         {/* SVG animation */}
         <g id="eafg1FSWbI92_to" transform="translate(960,1330)">
           <g id="eafg1FSWbI92_ts" transform="scale(1,1)">
-            <ellipse rx="100" ry="100" transform="translate(0,0)" fill="#0f1624" stroke-width="0" />
+            <ellipse rx="100" ry="100" transform="translate(0,0)" fill="#0f1624" strokeWidth="0" />
           </g>
         </g>
       </svg>

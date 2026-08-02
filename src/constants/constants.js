@@ -41,7 +41,7 @@ export const projects = [
     image: '/images/3.png',
     tags: ['Node.js', "Preact", 'JavaScript', 'HTML/CSS'],
     source: '',
-    visit: 'https://github.com/SPeedyZoZo/Weather-App',
+    visit: '',
     id: 4,
   },
   {
@@ -50,7 +50,7 @@ export const projects = [
     image: '/images/4.png',
     tags: ['React', 'Node.js', 'JavaScript', "Adobe Illustrator"],
     source: '',
-    visit: 'https://github.com/SPeedyZoZo/FDM-App',
+    visit: '',
     id: 5,
   },
   {
@@ -86,6 +86,7 @@ export const TimeLineData = [
   { year: 2023, text: 'Completed more group and solo projects, solidifying my specialty in front-end design and development', },
   { year: 2024, text: 'Graduated University with a First-Class final year project, then began freelance automation and AI engineering work', },
   { year: 2025, text: 'Joined Robiquity as an Associate Technical Consultant, delivering RPA, Power Platform, and applied AI projects for enterprise clients', },
+  { year: 2026, text: 'Completed the Post Graduate Program in AI and Machine Learning with Caltech', },
 ];
 
 export const workExperience = [
@@ -142,7 +143,7 @@ export const workExperience = [
 export const certifications = [
   'Microsoft Certified: Power Platform Fundamentals (PL-900)',
   'Microsoft Applied Skills: Create agents in Microsoft Copilot Studio',
-  'Post Graduate Program in AI and Machine Learning – Caltech (Ongoing)',
+  'Post Graduate Program in AI and Machine Learning – Caltech',
   'Google UX Design Professional Certificate – Google',
   'Applied Generative AI Specialization – Purdue University',
   'Automation Developer Associate Training – UiPath Academy',

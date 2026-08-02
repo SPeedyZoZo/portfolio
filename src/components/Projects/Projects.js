@@ -13,9 +13,9 @@ const Projects = () => (
     <GridContainer>
       {projects.map(({ id, image, title, description, tags, source, visit}) => (
         <BlogCard key={id}>
-          <Img src={image}/>
+          <Img src={image} alt={title} loading="lazy" decoding="async" />
           <TitleContent>
-            <HeaderThree title>{title}</HeaderThree>
+            <HeaderThree $large>{title}</HeaderThree>
             <Hr />
           </TitleContent>
           <CardInfo>{description}</CardInfo>
@@ -29,7 +29,7 @@ const Projects = () => (
             </TagList>
           </div>
           <UtilityList>
-            <ExternalLinks href={visit}>Visit</ExternalLinks>
+            {visit && <ExternalLinks href={visit}>Visit</ExternalLinks>}
             {/* <ExternalLinks href={source}>Source</ExternalLinks> */}
           </UtilityList>
         </BlogCard>

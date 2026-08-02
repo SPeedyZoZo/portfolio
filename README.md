@@ -1,5 +1,5 @@
 # Personal Portfolio
-*Node 18+ recommended. If `next dev`/`next build` fails with an OpenSSL error, run with `NODE_OPTIONS=--openssl-legacy-provider` (needed because this project is on Next.js 10/webpack 4-era hashing, which is incompatible with OpenSSL 3 on Node 17+).*
+*Node 18+ recommended. `npm run dev`/`npm run build` work out of the box — the `--openssl-legacy-provider` flag needed for Next.js 10/webpack 4-era hashing on Node 17+'s OpenSSL 3 is baked into the npm scripts via `cross-env`. Only needed manually if you invoke `next` directly instead of through npm.*
 
 ## Planned Features:
 *[High Priority]*
@@ -37,6 +37,7 @@ This is a static export (no Node server required on the host):
 - Fixed the header nav: it only had responsive spacing defined for one breakpoint, so links had zero gap and ran together on tablet/small-laptop widths. Rebuilt with a flexbox layout that scales cleanly from mobile to large desktop.
 - Tightened project card sizing (removed an oversized fixed `min-height` that left large empty gaps under shorter descriptions).
 - Refreshed the Hero bio and Contact section copy: softened freelance-availability language and reframed the Contact section around new opportunities rather than freelance project pitches, since I'm not taking on freelance work while job-hunting. General tone/emphasis pass to read well for financial-services/fintech consulting roles.
+- Fixed `npm run dev`/`npm run build` failing with an OpenSSL error out of the box on Node 17+ — baked the `--openssl-legacy-provider` flag into the npm scripts via `cross-env` instead of requiring it to be set manually every time.
 
 ### v1.3.0 - *August 1, 2026*
 - Marked the Caltech AI/ML postgraduate program as completed (was showing "Ongoing"); updated bio and added a 2026 timeline entry

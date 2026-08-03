@@ -25,6 +25,14 @@ This is a static export (no Node server required on the host):
 
 ## Changelog:
 
+### v1.2.2 (cont. 3) - *August 3, 2026*
+- Fixed a real layout bug in the Timeline: on desktop it had no scroll behavior at all — 12 years of entries were squeezed into a fixed-width flex row with `overflow-x: visible`, so the last couple of entries (e.g. 2025/2026) spilled past the container edge with no way to reach them. Only mobile ever had actual horizontal scrolling.
+- Rebuilt the Timeline as a proper scrollable carousel at every breakpoint: consistent card styling with a clear active/inactive state (previously only visible on mobile), snap-scrolling, and dot navigation shown at all sizes instead of just mobile.
+- Replaced the scroll-to-item math, which relied on a fragile, uncalibrated `* 0.7` constant with no relation to the actual container width, with an exact calculation based on the target item's real position — robust regardless of how many timeline entries exist.
+- Fixed invalid HTML in the Timeline (`<div>` children directly inside a `<ul>`) by making the wrapper a proper `<li>`.
+- "View My Work" on the Hero now scrolls to the Experience section instead of Projects, since that's the section meant to be the main thing shown to employers.
+- Audited the rest of the app: all internal anchor links, all external project/social links, and all image loads verified working with zero console errors; confirmed via a full production build.
+
 ### v1.2.2 (cont. 2) - *August 3, 2026*
 - Fixed the landing/loading animation not showing up: when Light Mode was implemented, both the intro overlay's backdrop *and* the growing reveal-circle were switched to the same `var(--bg-primary)` value, making the circle invisible against its own identical background in dark mode (the default). The backdrop is now a fixed black regardless of theme, so the theme-aware circle always has contrast to animate against — visible (and, in light mode, more dramatic) in both themes now.
 

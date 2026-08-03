@@ -25,6 +25,9 @@ This is a static export (no Node server required on the host):
 
 ## Changelog:
 
+### v1.2.2 (cont. 2) - *August 3, 2026*
+- Fixed the landing/loading animation not showing up: when Light Mode was implemented, both the intro overlay's backdrop *and* the growing reveal-circle were switched to the same `var(--bg-primary)` value, making the circle invisible against its own identical background in dark mode (the default). The backdrop is now a fixed black regardless of theme, so the theme-aware circle always has contrast to animate against — visible (and, in light mode, more dramatic) in both themes now.
+
 ### v1.2.2 (cont.) - *August 3, 2026*
 - Made the Robiquity experience card the featured entry in the Experience grid — it now spans the full width instead of sharing a half-width column with the other roles.
 - Added a "Client Work" sub-section under Robiquity with a card per client (Fidelity International, NHS Scotland, Evri), each with an official logo, sector tag, and a short description of the specific work done for them. Logos for Fidelity International (CC BY-SA 4.0) and Evri (public domain) sourced from Wikimedia Commons; NHS Scotland doesn't have a freely-reusable logo available, so that one is a simple text badge in the real NHS blue instead of a scraped trademark asset.

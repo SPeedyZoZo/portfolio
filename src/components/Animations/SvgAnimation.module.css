@@ -21,8 +21,9 @@
   }
   
   .svgAnimation {
-    /* Adjust the SVG styling as needed */
-    background-color: var(--bg-primary);
+    /* Fixed (not theme-aware) so the growing ellipse below — which IS theme-aware
+       via var(--bg-primary) — always has contrast against this backdrop to animate against. */
+    background-color: #000;
     width: 100%; /* Stretch the SVG animation to fill the container width */
     height: 100%; /* Stretch the SVG animation to fill the container height */
   }

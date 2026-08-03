@@ -25,6 +25,10 @@ This is a static export (no Node server required on the host):
 
 ## Changelog:
 
+### v1.2.2 (cont. 5) - *August 3, 2026*
+- Added left/right arrow buttons flanking the Timeline carousel, so it's navigable by click as well as wheel-scroll and dots. Hidden on mobile (swipe/dots cover it there).
+- Found and fixed two real bugs surfaced while building this: (1) the arrow click handlers computed the next step from React state that lags behind the actual scroll position during rapid clicks — switched to reading the live DOM position on every click instead; (2) clicking "previous" from the very end did nothing at all, because the "snap item to the container's left edge" math used for jump-to-item navigation breaks down near the end (the target item is often already fully visible, so the computed target overshoots past the max scrollable position and silently gets clamped to a no-op). The arrow buttons now step by a fixed one-card-width instead of trying to snap a specific item to the edge, which sidesteps the issue entirely. Verified with rapid-click and step-by-step position tracing before and after.
+
 ### v1.2.2 (cont. 4) - *August 3, 2026*
 - Corrected the timeline: the Caltech postgrad wasn't actually completed in 2026, so removed the dedicated 2026 timeline entry for it (it stays listed in Certifications, just without a specific year attached). Rewrote 2025 to reflect the Fidelity International/Evri client work and 2026 to reflect the PL-900 certification and NHS Scotland work — both were previously misattributed to the wrong year.
 - Added a prominent Education card (Queen Mary University of London, BSc (Hons) Computer Science, 2:1, with the First-Class final year project called out) at the top of what's now "Education & Certifications" — previously the degree wasn't listed anywhere on the site at all, and it's the most important credential.

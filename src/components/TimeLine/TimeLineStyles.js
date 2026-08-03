@@ -1,6 +1,57 @@
 
 import styled from 'styled-components'
 
+export const CarouselWrapper = styled.div`
+  position: relative;
+`
+
+export const CarouselNavButton = styled.button`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  ${(props) => props.$direction === 'prev' ? 'left: -18px;' : 'right: -18px;'}
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: background 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+
+  &:hover:not(:disabled) {
+    background: var(--bg-hover);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(-50%) scale(0.92);
+  }
+
+  &:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  @media ${props => props.theme.breakpoints.md} {
+    width: 34px;
+    height: 34px;
+    ${(props) => props.$direction === 'prev' ? 'left: -12px;' : 'right: -12px;'}
+  }
+
+  @media ${props => props.theme.breakpoints.sm} {
+    display: none;
+  }
+`
+
 export const CarouselContainer = styled.ul`
   max-width: 1040px;
   width: 100%;

@@ -18,12 +18,45 @@
 This is a static export (no Node server required on the host):
 
 1. `npm ci`
-2. `NODE_OPTIONS=--openssl-legacy-provider npm run build` — runs `next build && next export`, producing a static site in `out/`
+2. `npm run build` — runs `next build && next export`, producing a static site in `out/`
 3. Upload the **contents** of `out/` (not the folder itself) to the `zaid.netreviews.ai` document root via SiteGround's File Manager or SFTP
 4. `out/.htaccess` is included automatically (copied from `public/.htaccess` during export) — it forces HTTPS, serves the custom 404 page, and sets caching/compression headers
 5. Google Analytics (`G-EDYZW9VV7Y`) and Plerdy tracking are now baked into the build via `src/pages/_document.js`, so they survive every rebuild — no more manually editing the exported `index.html` after the fact
 
 ## Changelog:
+
+### v1.2.2 (cont. 5) - *August 3, 2026*
+- Added left/right arrow buttons flanking the Timeline carousel, so it's navigable by click as well as wheel-scroll and dots. Hidden on mobile (swipe/dots cover it there).
+- Found and fixed two real bugs surfaced while building this: (1) the arrow click handlers computed the next step from React state that lags behind the actual scroll position during rapid clicks — switched to reading the live DOM position on every click instead; (2) clicking "previous" from the very end did nothing at all, because the "snap item to the container's left edge" math used for jump-to-item navigation breaks down near the end (the target item is often already fully visible, so the computed target overshoots past the max scrollable position and silently gets clamped to a no-op). The arrow buttons now step by a fixed one-card-width instead of trying to snap a specific item to the edge, which sidesteps the issue entirely. Verified with rapid-click and step-by-step position tracing before and after.
+
+### v1.2.2 (cont. 4) - *August 3, 2026*
+- Corrected the timeline: the Caltech postgrad wasn't actually completed in 2026, so removed the dedicated 2026 timeline entry for it (it stays listed in Certifications, just without a specific year attached). Rewrote 2025 to reflect the Fidelity International/Evri client work and 2026 to reflect the PL-900 certification and NHS Scotland work — both were previously misattributed to the wrong year.
+- Added a prominent Education card (Queen Mary University of London, BSc (Hons) Computer Science, 2:1, with the First-Class final year project called out) at the top of what's now "Education & Certifications" — previously the degree wasn't listed anywhere on the site at all, and it's the most important credential.
+- Made the Timeline carousel scroll horizontally in response to normal vertical wheel/trackpad scrolling while hovering over it, instead of requiring an explicit horizontal-only gesture. Falls through to normal page scrolling once the carousel reaches either end, so it never traps the scroll.
+
+### v1.2.2 (cont. 3) - *August 3, 2026*
+- Fixed a real layout bug in the Timeline: on desktop it had no scroll behavior at all — 12 years of entries were squeezed into a fixed-width flex row with `overflow-x: visible`, so the last couple of entries (e.g. 2025/2026) spilled past the container edge with no way to reach them. Only mobile ever had actual horizontal scrolling.
+- Rebuilt the Timeline as a proper scrollable carousel at every breakpoint: consistent card styling with a clear active/inactive state (previously only visible on mobile), snap-scrolling, and dot navigation shown at all sizes instead of just mobile.
+- Replaced the scroll-to-item math, which relied on a fragile, uncalibrated `* 0.7` constant with no relation to the actual container width, with an exact calculation based on the target item's real position — robust regardless of how many timeline entries exist.
+- Fixed invalid HTML in the Timeline (`<div>` children directly inside a `<ul>`) by making the wrapper a proper `<li>`.
+- "View My Work" on the Hero now scrolls to the Experience section instead of Projects, since that's the section meant to be the main thing shown to employers.
+- Audited the rest of the app: all internal anchor links, all external project/social links, and all image loads verified working with zero console errors; confirmed via a full production build.
+
+### v1.2.2 (cont. 2) - *August 3, 2026*
+- Fixed the landing/loading animation not showing up: when Light Mode was implemented, both the intro overlay's backdrop *and* the growing reveal-circle were switched to the same `var(--bg-primary)` value, making the circle invisible against its own identical background in dark mode (the default). The backdrop is now a fixed black regardless of theme, so the theme-aware circle always has contrast to animate against — visible (and, in light mode, more dramatic) in both themes now.
+
+### v1.2.2 (cont.) - *August 3, 2026*
+- Made the Robiquity experience card the featured entry in the Experience grid — it now spans the full width instead of sharing a half-width column with the other roles.
+- Added a "Client Work" sub-section under Robiquity with a card per client (Fidelity International, NHS Scotland, Evri), each with an official logo, sector tag, and a short description of the specific work done for them. Logos for Fidelity International (CC BY-SA 4.0) and Evri (public domain) sourced from Wikimedia Commons; NHS Scotland doesn't have a freely-reusable logo available, so that one is a simple text badge in the real NHS blue instead of a scraped trademark asset.
+- Trimmed the top-level Robiquity bullet points to avoid duplicating what's now covered in the client cards.
+- Corrected client attribution after cross-checking against the Evri PFAS Resource Planning SDD: the Java-based case management system integration belongs to Fidelity, not Evri. The Evri card now accurately describes the Power Apps resource-planning tool (surfacing pre-existing ML-generated parcel volume forecasts across depots/hubs for planners — not an ML model built as part of this work).
+
+### v1.2.2 - *August 3, 2026*
+- Implemented Light Mode (previously a locked "coming soon" toggle in Settings). Built a CSS custom-property theme system (`--bg-primary`, `--text-primary/secondary/tertiary`, `--border-color`, etc., defined for dark and overridden under `:root[data-theme="light"]`) and converted every component's hardcoded colors to it — Header, Footer, Hero, Contact, Settings panel, Projects, Experience, Technologies, Timeline, and Accomplishments all now adapt.
+- The mouse-trail "Classic" color now resolves to `var(--text-primary)` instead of a fixed white, so it stays visible instead of disappearing against a light background.
+- The landing intro animation and the decorative background diamond lines also adapt their colors to the active theme instead of staying hardcoded for dark.
+- Added a small blocking inline script in `_document.js` that applies the saved theme before first paint, so returning light-mode visitors don't see a flash of the dark theme while the page hydrates.
+- Theme choice persists via the existing Settings `localStorage`, same as the other preferences.
 
 ### v1.4.0 - *August 2, 2026*
 - **Fixed a major SEO bug**: every page section (Hero, Experience, Projects, Technologies, Timeline, Accomplishments) was excluded from the static export via `ssr: false` dynamic imports, so search engines and social-media link previews were seeing an almost-empty page. Switched to static imports so the full page now renders in the exported HTML.

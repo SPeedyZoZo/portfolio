@@ -85,8 +85,8 @@ export const TimeLineData = [
   { year: 2022, text: 'Developed and worked on many projects which honed my passion and skillset for web development and UI/UX design', },
   { year: 2023, text: 'Completed more group and solo projects, solidifying my specialty in front-end design and development', },
   { year: 2024, text: 'Graduated University with a First-Class final year project, then began freelance automation and AI engineering work', },
-  { year: 2025, text: 'Joined Robiquity as an Associate Technical Consultant, delivering RPA, Power Platform, and applied AI projects for enterprise clients', },
-  { year: 2026, text: 'Completed the Post Graduate Program in AI and Machine Learning with Caltech', },
+  { year: 2025, text: 'Joined Robiquity as an Associate Technical Consultant, delivering RPA and automation projects for Fidelity International and Evri', },
+  { year: 2026, text: 'Earned the Microsoft Power Platform Fundamentals (PL-900) certification and led a Power Apps redesign for NHS Scotland', },
 ];
 
 export const workExperience = [
@@ -95,12 +95,31 @@ export const workExperience = [
     location: 'Manchester, UK (Hybrid)',
     role: 'Associate Technical Consultant',
     period: '2025 – Present',
+    featured: true,
     points: [
-      'Architected a large-scale legacy RPA migration from Blue Prism to Power Automate Desktop and Cloud Flows for Fidelity, cutting licensing costs by an estimated 30%.',
-      'Spearheaded the UI/UX redesign of Canvas and Model-Driven Power Apps for NHS Scotland, writing custom JavaScript web resources for dynamic UI rendering.',
       'Designed and deployed a Microsoft Copilot Studio conversational agent for HR policy management to drive internal AI adoption.',
       'Conducted R&D on custom MCP hosting and agentic LLMs for secure, privacy-focused enterprise environments.',
-      'Managed UAT and hypercare pipelines and trained 50+ enterprise stakeholders, achieving a 100% satisfaction rating.',
+      'Acted as primary technical liaison during deployment, managing UAT and hypercare pipelines and training 50+ enterprise stakeholders to a 100% satisfaction rating.',
+    ],
+    clients: [
+      {
+        name: 'Fidelity International',
+        sector: 'Financial Services',
+        logo: '/images/clients/fidelity-international.svg',
+        blurb: 'Architected a legacy RPA migration from Blue Prism to Power Automate Desktop and Cloud Flows, cutting licensing costs by an estimated 30%. Built reusable PAD objects to integrate a complex, Java-based case management system with near-100% uptime.',
+      },
+      {
+        name: 'NHS Scotland',
+        sector: 'Healthcare',
+        logo: '/images/clients/nhs-scotland.svg',
+        blurb: 'Led the UI/UX redesign of Canvas and Model-Driven Power Apps, writing custom JavaScript web resources to dynamically render UI based on Azure AD/Entra ID business units.',
+      },
+      {
+        name: 'Evri',
+        sector: 'Logistics',
+        logo: '/images/clients/evri.png',
+        blurb: 'Built a Power Apps resource-planning tool surfacing ML-generated parcel volume forecasts across depots and hubs, giving planners a live forecast-vs-actual view to optimise daily staffing.',
+      },
     ],
     id: 0,
   },
@@ -139,6 +158,14 @@ export const workExperience = [
     id: 3,
   },
 ];
+
+export const education = {
+  institution: 'Queen Mary University of London',
+  degree: 'BSc (Hons) Computer Science',
+  classification: '2:1 — Upper Second-Class Honours',
+  period: 'September 2021 – May 2024',
+  highlight: 'Final Year Project graded 90% (First-Class): VisualPromptBuilder, a TypeScript/Next.js web app helping nonverbal and cognitively disabled individuals communicate through pictogram-based sentence construction.',
+};
 
 export const certifications = [
   'Microsoft Certified: Power Platform Fundamentals (PL-900)',

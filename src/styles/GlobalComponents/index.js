@@ -30,7 +30,7 @@ export const SectionTitle = styled.h2`
   line-height: ${(props) => props.main ? '72px' : '56px'};
   width: max-content;
   max-width: 100%;
-  background: linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%);
+  background: linear-gradient(121.57deg, var(--text-heading-start) 18.77%, var(--text-heading-end) 60.15%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 16px;
@@ -60,7 +60,7 @@ export const SectionText = styled.p`
   line-height: 40px;
   font-weight: 300;
   padding-bottom: 3.6rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-tertiary);
 
   @media ${(props) => props.theme.breakpoints.md} {
     max-width: 670px;
@@ -103,7 +103,7 @@ export const SectionSubText = styled.p`
   font-weight: 300;
   font-size: 18px;
   line-height: 32px;
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--text-secondary);
 
 @media ${(props) => props.theme.breakpoints.md} {
     max-width: 672px;
@@ -117,9 +117,9 @@ export const SectionSubText = styled.p`
   }
 `
 export const SecondaryBtn = styled.button`
-  color: #FFF;
+  color: var(--text-primary);
   background: none;
-  border: 1px solid rgba(255, 255, 255, 0.33);
+  border: 1px solid var(--border-color-strong);
   box-sizing: border-box;
   border-radius: 999px;
   padding: 16px 24px;
@@ -136,9 +136,9 @@ export const SecondaryBtn = styled.button`
   }
 
   &:hover {
-    color: #0f1624;
-    background: #fff;
-    border: 1px solid #fff;
+    color: var(--btn-hover-text);
+    background: var(--btn-hover-bg);
+    border: 1px solid var(--btn-hover-bg);
   }
 
   &:active {
@@ -253,7 +253,7 @@ export const LinkContainer = styled.div`
   padding: 8px;
 
   &:hover {
-    background-color: #212d45;
+    background-color: var(--bg-hover);
     transform: scale(1.2);
     cursor: pointer;
   }

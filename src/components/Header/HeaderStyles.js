@@ -57,11 +57,11 @@ export const Div3 = styled.div`
 export const NavLink = styled.a`
   font-size: 1.8rem;
   line-height: 32px;
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--text-secondary);
   transition: 0.4s ease;
   white-space: nowrap;
   &:hover {
-    color: #fff;
+    color: var(--text-primary);
     opacity: 1;
     cursor: pointer;
   }
@@ -74,11 +74,11 @@ export const NavLink = styled.a`
 // Social Icons
 export const SocialIcons = styled.a`
 transition: 0.3s ease;
-color: white;
+color: var(--text-primary);
 border-radius: 50px;
   padding: 8px;
 &:hover {
-    background-color: #212d45;
+    background-color: var(--bg-hover);
     transform: scale(1.2);
     cursor: pointer;
 

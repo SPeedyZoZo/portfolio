@@ -7,9 +7,9 @@ export const FabButton = styled.button`
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background: #0f1624;
-  color: #fff;
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,7 +23,7 @@ export const FabButton = styled.button`
   }
 
   &:hover {
-    background: #17233a;
+    background: var(--bg-hover);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
   }
 
@@ -61,8 +61,8 @@ export const Panel = styled.div`
   max-width: calc(100vw - 32px);
   max-height: calc(100vh - 140px);
   overflow-y: auto;
-  background: #131b2c;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
   border-radius: 16px;
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
   z-index: 10000;
@@ -72,7 +72,7 @@ export const Panel = styled.div`
   opacity: ${(props) => (props.open ? '1' : '0')};
   visibility: ${(props) => (props.open ? 'visible' : 'hidden')};
   pointer-events: ${(props) => (props.open ? 'auto' : 'none')};
-  transition: transform 0.25s ease, opacity 0.25s ease, visibility 0.25s;
+  transition: transform 0.25s ease, opacity 0.25s ease, visibility 0.25s, background 0.3s ease;
 
   @media ${(props) => props.theme.breakpoints.sm} {
     right: 16px;
@@ -91,14 +91,14 @@ export const PanelHeader = styled.div`
 export const PanelTitle = styled.h3`
   font-size: 18px;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-primary);
   margin: 0;
 `;
 
 export const CloseButton = styled.button`
   background: none;
   border: none;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-tertiary);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -107,8 +107,8 @@ export const CloseButton = styled.button`
   transition: color 0.2s ease, background 0.2s ease;
 
   &:hover {
-    color: #fff;
-    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-primary);
+    background: var(--bg-hover);
   }
 
   &:focus {
@@ -118,7 +118,7 @@ export const CloseButton = styled.button`
 
 export const SettingGroup = styled.div`
   padding: 14px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--border-color);
 
   &:last-of-type {
     border-bottom: none;
@@ -141,7 +141,7 @@ export const SettingLabelGroup = styled.div`
 export const SettingLabel = styled.span`
   font-size: 14px;
   font-weight: 600;
-  color: #fff;
+  color: var(--text-primary);
   display: flex;
   align-items: center;
   gap: 6px;
@@ -149,7 +149,7 @@ export const SettingLabel = styled.span`
 
 export const SettingDescription = styled.span`
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-tertiary);
 `;
 
 export const ToggleTrack = styled.button`
@@ -159,7 +159,7 @@ export const ToggleTrack = styled.button`
   border-radius: 999px;
   border: none;
   flex-shrink: 0;
-  background: ${(props) => (props.checked ? 'linear-gradient(270deg, #13ADC7 0%, #945DD6 100%)' : 'rgba(255, 255, 255, 0.15)')};
+  background: ${(props) => (props.checked ? 'linear-gradient(270deg, #13ADC7 0%, #945DD6 100%)' : 'var(--toggle-off-bg)')};
   cursor: pointer;
   transition: background 0.25s ease;
 
@@ -197,8 +197,8 @@ export const ColorSwatch = styled.button`
   height: 26px;
   border-radius: 50%;
   background: ${(props) => props.color};
-  border: 2px solid ${(props) => (props.selected ? '#fff' : 'transparent')};
-  box-shadow: ${(props) => (props.selected ? '0 0 0 2px rgba(255,255,255,0.25)' : 'none')};
+  border: 2px solid ${(props) => (props.selected ? 'var(--text-primary)' : 'transparent')};
+  box-shadow: ${(props) => (props.selected ? '0 0 0 2px var(--bg-hover)' : 'none')};
   cursor: pointer;
   transition: transform 0.2s ease, border 0.2s ease;
 
@@ -233,13 +233,13 @@ export const SliderLabelRow = styled.div`
 export const SliderLabel = styled.span`
   font-size: 12px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--text-secondary);
 `;
 
 export const SliderValue = styled.span`
   font-size: 11px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--text-tertiary);
 `;
 
 export const SliderInput = styled.input.attrs({ type: 'range' })`
@@ -291,62 +291,23 @@ export const SliderInput = styled.input.attrs({ type: 'range' })`
   }
 `;
 
-export const LockedWrap = styled.div`
-  position: relative;
-  display: inline-flex;
-
-  &:hover span[data-tooltip],
-  &:focus-within span[data-tooltip] {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
-
-export const Tooltip = styled.span`
-  position: absolute;
-  bottom: calc(100% + 8px);
-  right: 0;
-  background: #0a0f1a;
-  color: #fff;
-  font-size: 11px;
-  font-weight: 600;
-  white-space: nowrap;
-  padding: 6px 10px;
-  border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  opacity: 0;
-  transform: translateY(4px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  pointer-events: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    right: 12px;
-    border: 5px solid transparent;
-    border-top-color: #0a0f1a;
-  }
-`;
-
 export const ResetButton = styled.button`
   width: 100%;
   margin-top: 4px;
   padding: 10px;
   background: none;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--border-color);
   border-radius: 8px;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-secondary);
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
   transition: color 0.2s ease, border 0.2s ease, background 0.2s ease;
 
   &:hover {
-    color: #fff;
-    border-color: rgba(255, 255, 255, 0.35);
-    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    border-color: var(--border-color-strong);
+    background: var(--bg-hover);
   }
 
   &:focus {

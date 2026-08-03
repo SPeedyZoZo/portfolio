@@ -24,7 +24,7 @@ row-gap: 3rem;
 `
 export const BlogCard = styled.div`
   border-radius: 10px;
-  box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
+  box-shadow: 3px 3px 20px var(--shadow-color);
   text-align: center;
   width: 400px;
   min-height: 560px;
@@ -37,12 +37,12 @@ export const BlogCard = styled.div`
   transition: all 0.5s ease;
   &:hover {
     transform: translateY(-6px);
-    box-shadow: 6px 6px 20px rgba(128, 128, 128, 0.5);
+    box-shadow: 6px 6px 20px var(--shadow-color-hover);
   }
 
   &:active {
     transform: translateY(-1px);
-    box-shadow: 3px 3px 10px rgba(128, 128, 128, 0.5);
+    box-shadow: 3px 3px 10px var(--shadow-color-hover);
   }
 
 `;
@@ -57,7 +57,7 @@ export const TitleContent = styled.div`
 export const HeaderThree = styled.h4`
   font-weight: 500;
   letter-spacing: 2px;
-  color: #9cc9e3;
+  color: var(--project-title-color);
   padding: .5rem 0;
   font-size: ${(props) => props.$large ? '3rem' : '2rem'};
 `;
@@ -84,7 +84,7 @@ export const Intro = styled.div`
 export const CardInfo = styled.p`
   width: 100%;
   padding: 0 50px;
-  color: #e4e6e7;
+  color: var(--text-secondary);
   font-style: 2rem;
   line-height: 24px;
   text-align: justify;
@@ -124,6 +124,6 @@ justify-content: space-around;
 padding: 2rem;
 `
 export const Tag = styled.li`
-color: #d8bfbf;
+color: var(--text-tertiary);
 font-size: 1.5rem;
 `

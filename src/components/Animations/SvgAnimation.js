@@ -39,7 +39,7 @@ const SvgAnimation = () => {
         {/* SVG animation */}
         <g id="eafg1FSWbI92_to" transform="translate(960,1330)">
           <g id="eafg1FSWbI92_ts" transform="scale(1,1)">
-            <ellipse rx="100" ry="100" transform="translate(0,0)" fill="#0f1624" strokeWidth="0" />
+            <ellipse rx="100" ry="100" transform="translate(0,0)" style={{ fill: 'var(--bg-primary)' }} strokeWidth="0" />
           </g>
         </g>
       </svg>

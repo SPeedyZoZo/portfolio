@@ -32,6 +32,18 @@ export default class MyDocument extends Document {
     return (
       <Html lang='en-GB'>
         <Head>
+          {/* Set the theme attribute before first paint so returning light-mode
+              visitors don't see a flash of the default dark theme. */}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                try {
+                  var stored = JSON.parse(window.localStorage.getItem('portfolio-settings'));
+                  document.documentElement.setAttribute('data-theme', (stored && stored.theme) || 'dark');
+                } catch (e) {}
+              `,
+            }}
+          />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
           <link

@@ -25,7 +25,7 @@ const Hero = () => (
       </SectionText>
 
       <CTARow>
-        <Button onClick={() => scrollToId('projects')}>View My Work</Button>
+        <Button onClick={() => scrollToId('experience')}>View My Work</Button>
         <SecondaryBtn onClick={() => scrollToId('contact')}>Get In Touch</SecondaryBtn>
       </CTARow>
     </LeftSection>

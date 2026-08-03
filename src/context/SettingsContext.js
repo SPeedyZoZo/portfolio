@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
 export const TRAIL_COLORS = [
-  { id: 'white', label: 'Classic White', value: '#FFFFFF' },
+  { id: 'white', label: 'Classic', value: 'var(--text-primary)' },
   { id: 'teal', label: 'Teal', value: '#13ADC7' },
   { id: 'purple', label: 'Purple', value: '#945DD6' },
   { id: 'orange', label: 'Orange', value: '#F46737' },

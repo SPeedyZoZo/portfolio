@@ -19,10 +19,85 @@ export const ExperienceCard = styled.div`
   padding: 32px;
   display: flex;
   flex-direction: column;
+  grid-column: ${(props) => props.$featured ? '1 / -1' : 'auto'};
 
   @media ${props => props.theme.breakpoints.sm} {
     padding: 24px;
   }
+`
+
+export const ClientsLabel = styled.p`
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin: 24px 0 16px;
+`
+
+export const ClientGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  @media ${props => props.theme.breakpoints.md} {
+    grid-template-columns: 1fr;
+  }
+`
+
+export const ClientCard = styled.div`
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+`
+
+export const ClientLogoWrap = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: 40px;
+  padding: 0 14px;
+  background: #ffffff;
+  border-radius: 8px;
+  margin-bottom: 14px;
+
+  img {
+    height: 22px;
+    width: auto;
+    object-fit: contain;
+  }
+`
+
+export const ClientHeaderRow = styled.div`
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+`
+
+export const ClientName = styled.h5`
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+`
+
+export const ClientSector = styled.span`
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  white-space: nowrap;
+`
+
+export const ClientBlurb = styled.p`
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 21px;
+  color: var(--text-secondary);
 `
 
 export const ExperienceHeader = styled.div`

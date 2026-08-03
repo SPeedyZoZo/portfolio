@@ -25,6 +25,11 @@ This is a static export (no Node server required on the host):
 
 ## Changelog:
 
+### v1.2.2 (cont.) - *August 3, 2026*
+- Made the Robiquity experience card the featured entry in the Experience grid — it now spans the full width instead of sharing a half-width column with the other roles.
+- Added a "Client Work" sub-section under Robiquity with a card per client (Fidelity International, NHS Scotland, Evri), each with an official logo, sector tag, and a short description of the specific work done for them. Logos for Fidelity International (CC BY-SA 4.0) and Evri (public domain) sourced from Wikimedia Commons; NHS Scotland doesn't have a freely-reusable logo available, so that one is a simple text badge in the real NHS blue instead of a scraped trademark asset.
+- Trimmed the top-level Robiquity bullet points to avoid duplicating what's now covered in the client cards.
+
 ### v1.2.2 - *August 3, 2026*
 - Implemented Light Mode (previously a locked "coming soon" toggle in Settings). Built a CSS custom-property theme system (`--bg-primary`, `--text-primary/secondary/tertiary`, `--border-color`, etc., defined for dark and overridden under `:root[data-theme="light"]`) and converted every component's hardcoded colors to it — Header, Footer, Hero, Contact, Settings panel, Projects, Experience, Technologies, Timeline, and Accomplishments all now adapt.
 - The mouse-trail "Classic" color now resolves to `var(--text-primary)` instead of a fixed white, so it stays visible instead of disappearing against a light background.

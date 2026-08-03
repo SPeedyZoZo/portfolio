@@ -5,6 +5,14 @@ import { workExperience, certifications } from '../../constants/constants';
 import {
   CertificationItem,
   CertificationList,
+  ClientBlurb,
+  ClientCard,
+  ClientGrid,
+  ClientHeaderRow,
+  ClientLogoWrap,
+  ClientName,
+  ClientSector,
+  ClientsLabel,
   ExperienceCard,
   ExperienceCompany,
   ExperienceGrid,
@@ -23,8 +31,8 @@ const Experience = () => (
       A look at where I've worked and what I've been building — spanning enterprise consulting, freelance automation and AI engineering, and hands-on volunteering.
     </SectionText>
     <ExperienceGrid>
-      {workExperience.map(({ id, company, location, role, period, points }) => (
-        <ExperienceCard key={id}>
+      {workExperience.map(({ id, company, location, role, period, points, featured, clients }) => (
+        <ExperienceCard key={id} $featured={featured}>
           <ExperienceHeader>
             <ExperienceRole>{role}</ExperienceRole>
             <ExperiencePeriod>{period}</ExperiencePeriod>
@@ -35,6 +43,26 @@ const Experience = () => (
               <ExperiencePoint key={i}>{point}</ExperiencePoint>
             ))}
           </ExperiencePoints>
+
+          {clients && (
+            <>
+              <ClientsLabel>Client Work</ClientsLabel>
+              <ClientGrid>
+                {clients.map((client) => (
+                  <ClientCard key={client.name}>
+                    <ClientLogoWrap>
+                      <img src={client.logo} alt={`${client.name} logo`} loading="lazy" />
+                    </ClientLogoWrap>
+                    <ClientHeaderRow>
+                      <ClientName>{client.name}</ClientName>
+                      <ClientSector>{client.sector}</ClientSector>
+                    </ClientHeaderRow>
+                    <ClientBlurb>{client.blurb}</ClientBlurb>
+                  </ClientCard>
+                ))}
+              </ClientGrid>
+            </>
+          )}
         </ExperienceCard>
       ))}
     </ExperienceGrid>

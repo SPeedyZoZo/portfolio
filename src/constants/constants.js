@@ -106,7 +106,7 @@ export const workExperience = [
         name: 'Fidelity International',
         sector: 'Financial Services',
         logo: '/images/clients/fidelity-international.svg',
-        blurb: 'Architected a legacy RPA migration from Blue Prism to Power Automate Desktop and Cloud Flows, cutting licensing costs by an estimated 30% and improving processing speed.',
+        blurb: 'Architected a legacy RPA migration from Blue Prism to Power Automate Desktop and Cloud Flows, cutting licensing costs by an estimated 30%. Built reusable PAD objects to integrate a complex, Java-based case management system with near-100% uptime.',
       },
       {
         name: 'NHS Scotland',
@@ -118,7 +118,7 @@ export const workExperience = [
         name: 'Evri',
         sector: 'Logistics',
         logo: '/images/clients/evri.png',
-        blurb: 'Built reusable Power Automate Desktop objects to integrate a complex, Java-based case management system, using text-based selectors and advanced error handling for near-100% uptime.',
+        blurb: 'Built a Power Apps resource-planning tool surfacing ML-generated parcel volume forecasts across depots and hubs, giving planners a live forecast-vs-actual view to optimise daily staffing.',
       },
     ],
     id: 0,

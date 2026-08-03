@@ -58,6 +58,34 @@ const Timeline = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Translate vertical (wheel/trackpad) scrolling into horizontal carousel
+  // movement while the pointer is over it, so it's scrollable the same way
+  // as the rest of the page instead of needing a horizontal-only gesture.
+  // Uses a native (non-passive) listener so preventDefault actually works —
+  // React's synthetic onWheel is passive by default and can't stop the page
+  // from scrolling too. Falls through to normal page scroll once the
+  // carousel hits either end, so it never traps the scroll.
+  useEffect(() => {
+    const container = carouselRef.current;
+    if (!container) return undefined;
+
+    const handleWheel = (e) => {
+      if (e.deltaY === 0) return;
+
+      const maxScrollLeft = container.scrollWidth - container.clientWidth;
+      const atStart = container.scrollLeft <= 0;
+      const atEnd = container.scrollLeft >= maxScrollLeft - 1;
+
+      if ((e.deltaY < 0 && atStart) || (e.deltaY > 0 && atEnd)) return;
+
+      e.preventDefault();
+      container.scrollLeft += e.deltaY;
+    };
+
+    container.addEventListener('wheel', handleWheel, { passive: false });
+    return () => container.removeEventListener('wheel', handleWheel);
+  }, []);
+
   return (
     <Section id="about">
       <SectionTitle>Timeline</SectionTitle>

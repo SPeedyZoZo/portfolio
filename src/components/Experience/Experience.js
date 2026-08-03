@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
-import { workExperience, certifications } from '../../constants/constants';
+import { workExperience, certifications, education } from '../../constants/constants';
 import {
   CertificationItem,
   CertificationList,
@@ -13,6 +13,13 @@ import {
   ClientName,
   ClientSector,
   ClientsLabel,
+  EducationCard,
+  EducationClassification,
+  EducationDegree,
+  EducationHighlight,
+  EducationInstitution,
+  EducationPeriod,
+  EducationTopRow,
   ExperienceCard,
   ExperienceCompany,
   ExperienceGrid,
@@ -67,7 +74,16 @@ const Experience = () => (
       ))}
     </ExperienceGrid>
 
-    <SectionTitle>Certifications</SectionTitle>
+    <SectionTitle>Education &amp; Certifications</SectionTitle>
+    <EducationCard>
+      <EducationTopRow>
+        <EducationDegree>{education.degree}</EducationDegree>
+        <EducationPeriod>{education.period}</EducationPeriod>
+      </EducationTopRow>
+      <EducationInstitution>{education.institution}</EducationInstitution>
+      <EducationClassification>{education.classification}</EducationClassification>
+      <EducationHighlight>{education.highlight}</EducationHighlight>
+    </EducationCard>
     <CertificationList>
       {certifications.map((cert, i) => (
         <CertificationItem key={i}>{cert}</CertificationItem>

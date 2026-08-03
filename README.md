@@ -25,6 +25,11 @@ This is a static export (no Node server required on the host):
 
 ## Changelog:
 
+### v1.2.2 (cont. 4) - *August 3, 2026*
+- Corrected the timeline: the Caltech postgrad wasn't actually completed in 2026, so removed the dedicated 2026 timeline entry for it (it stays listed in Certifications, just without a specific year attached). Rewrote 2025 to reflect the Fidelity International/Evri client work and 2026 to reflect the PL-900 certification and NHS Scotland work — both were previously misattributed to the wrong year.
+- Added a prominent Education card (Queen Mary University of London, BSc (Hons) Computer Science, 2:1, with the First-Class final year project called out) at the top of what's now "Education & Certifications" — previously the degree wasn't listed anywhere on the site at all, and it's the most important credential.
+- Made the Timeline carousel scroll horizontally in response to normal vertical wheel/trackpad scrolling while hovering over it, instead of requiring an explicit horizontal-only gesture. Falls through to normal page scrolling once the carousel reaches either end, so it never traps the scroll.
+
 ### v1.2.2 (cont. 3) - *August 3, 2026*
 - Fixed a real layout bug in the Timeline: on desktop it had no scroll behavior at all — 12 years of entries were squeezed into a fixed-width flex row with `overflow-x: visible`, so the last couple of entries (e.g. 2025/2026) spilled past the container edge with no way to reach them. Only mobile ever had actual horizontal scrolling.
 - Rebuilt the Timeline as a proper scrollable carousel at every breakpoint: consistent card styling with a clear active/inactive state (previously only visible on mobile), snap-scrolling, and dot navigation shown at all sizes instead of just mobile.

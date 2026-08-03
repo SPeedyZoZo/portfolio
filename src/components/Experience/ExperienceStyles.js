@@ -171,6 +171,78 @@ export const ExperiencePoint = styled.li`
   }
 `
 
+export const EducationCard = styled.div`
+  background: linear-gradient(135deg, rgba(148, 93, 214, 0.18) 0%, rgba(19, 173, 199, 0.08) 100%);
+  border: 1px solid var(--border-color-strong);
+  border-radius: 16px;
+  padding: 32px;
+  margin: 24px 0 40px;
+  display: flex;
+  flex-direction: column;
+
+  @media ${props => props.theme.breakpoints.sm} {
+    padding: 24px;
+  }
+`
+
+export const EducationTopRow = styled.div`
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+`
+
+export const EducationDegree = styled.h3`
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 32px;
+  color: var(--text-primary);
+
+  @media ${props => props.theme.breakpoints.sm} {
+    font-size: 20px;
+    line-height: 26px;
+  }
+`
+
+export const EducationPeriod = styled.span`
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-tertiary);
+  white-space: nowrap;
+`
+
+export const EducationInstitution = styled.p`
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-top: 2px;
+
+  @media ${props => props.theme.breakpoints.sm} {
+    font-size: 16px;
+  }
+`
+
+export const EducationClassification = styled.span`
+  display: inline-block;
+  width: fit-content;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  background: linear-gradient(270deg, #13ADC7 0%, #945DD6 100%);
+  padding: 5px 14px;
+  border-radius: 999px;
+  margin: 14px 0 14px;
+`
+
+export const EducationHighlight = styled.p`
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 23px;
+  color: var(--text-secondary);
+`
+
 export const CertificationList = styled.ul`
   list-style: none;
   display: grid;

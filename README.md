@@ -18,12 +18,19 @@
 This is a static export (no Node server required on the host):
 
 1. `npm ci`
-2. `NODE_OPTIONS=--openssl-legacy-provider npm run build` — runs `next build && next export`, producing a static site in `out/`
+2. `npm run build` — runs `next build && next export`, producing a static site in `out/`
 3. Upload the **contents** of `out/` (not the folder itself) to the `zaid.netreviews.ai` document root via SiteGround's File Manager or SFTP
 4. `out/.htaccess` is included automatically (copied from `public/.htaccess` during export) — it forces HTTPS, serves the custom 404 page, and sets caching/compression headers
 5. Google Analytics (`G-EDYZW9VV7Y`) and Plerdy tracking are now baked into the build via `src/pages/_document.js`, so they survive every rebuild — no more manually editing the exported `index.html` after the fact
 
 ## Changelog:
+
+### v1.2.2 - *August 3, 2026*
+- Implemented Light Mode (previously a locked "coming soon" toggle in Settings). Built a CSS custom-property theme system (`--bg-primary`, `--text-primary/secondary/tertiary`, `--border-color`, etc., defined for dark and overridden under `:root[data-theme="light"]`) and converted every component's hardcoded colors to it — Header, Footer, Hero, Contact, Settings panel, Projects, Experience, Technologies, Timeline, and Accomplishments all now adapt.
+- The mouse-trail "Classic" color now resolves to `var(--text-primary)` instead of a fixed white, so it stays visible instead of disappearing against a light background.
+- The landing intro animation and the decorative background diamond lines also adapt their colors to the active theme instead of staying hardcoded for dark.
+- Added a small blocking inline script in `_document.js` that applies the saved theme before first paint, so returning light-mode visitors don't see a flash of the dark theme while the page hydrates.
+- Theme choice persists via the existing Settings `localStorage`, same as the other preferences.
 
 ### v1.4.0 - *August 2, 2026*
 - **Fixed a major SEO bug**: every page section (Hero, Experience, Projects, Technologies, Timeline, Accomplishments) was excluded from the static export via `ssr: false` dynamic imports, so search engines and social-media link previews were seeing an almost-empty page. Switched to static imports so the full page now renders in the exported HTML.

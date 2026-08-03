@@ -22,7 +22,7 @@
   
   .svgAnimation {
     /* Adjust the SVG styling as needed */
-    background-color: #000;
+    background-color: var(--bg-primary);
     width: 100%; /* Stretch the SVG animation to fill the container width */
     height: 100%; /* Stretch the SVG animation to fill the container height */
   }

@@ -8,7 +8,7 @@ export const ContactCard = styled.div`
   gap: 8px;
   padding: 56px 48px;
   border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-color);
   background: linear-gradient(180deg, rgba(148, 93, 214, 0.12) 0%, rgba(19, 173, 199, 0.05) 100%);
 
   @media ${(props) => props.theme.breakpoints.sm} {

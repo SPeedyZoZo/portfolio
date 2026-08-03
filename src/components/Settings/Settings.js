@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { AiOutlineSetting, AiOutlineClose, AiFillLock } from 'react-icons/ai';
+import { AiOutlineSetting, AiOutlineClose } from 'react-icons/ai';
 
 import { useSettings, TRAIL_COLORS } from '../../context/SettingsContext';
 import {
@@ -24,8 +24,6 @@ import {
   SliderLabel,
   SliderValue,
   SliderInput,
-  LockedWrap,
-  Tooltip,
   ResetButton,
 } from './SettingsStyles';
 
@@ -188,17 +186,14 @@ const Settings = () => {
         <SettingGroup>
           <SettingRow>
             <SettingLabelGroup>
-              <SettingLabel>
-                Light Mode <AiFillLock size="1.1rem" style={{ opacity: 0.6 }} />
-              </SettingLabel>
+              <SettingLabel>Light Mode</SettingLabel>
               <SettingDescription>Switch the site to a light theme</SettingDescription>
             </SettingLabelGroup>
-            <LockedWrap tabIndex={0}>
-              <ToggleTrack checked={false} disabled aria-label="Light mode (coming soon)">
-                <ToggleThumb checked={false} />
-              </ToggleTrack>
-              <Tooltip data-tooltip>Coming soon</Tooltip>
-            </LockedWrap>
+            <Toggle
+              checked={settings.theme === 'light'}
+              onChange={(value) => updateSettings({ theme: value ? 'light' : 'dark' })}
+              ariaLabel="Toggle light mode"
+            />
           </SettingRow>
         </SettingGroup>
 

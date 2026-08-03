@@ -24,9 +24,9 @@ export const Eyebrow = styled.div`
   gap: 8px;
   padding: 8px 16px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--border-color);
   background: rgba(19, 173, 199, 0.08);
-  color: #fff;
+  color: var(--text-primary);
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.04em;

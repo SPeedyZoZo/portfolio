@@ -14,7 +14,7 @@ export const ExperienceGrid = styled.div`
 
 export const ExperienceCard = styled.div`
   background: linear-gradient(180deg, rgba(23, 92, 230, 0.15) 0%, rgba(23, 92, 230, 0) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-color);
   border-radius: 16px;
   padding: 32px;
   display: flex;
@@ -38,7 +38,7 @@ export const ExperienceRole = styled.h4`
   font-weight: 700;
   font-size: 22px;
   line-height: 28px;
-  color: #FFFFFF;
+  color: var(--text-primary);
 
   @media ${props => props.theme.breakpoints.sm} {
     font-size: 18px;
@@ -49,14 +49,14 @@ export const ExperienceRole = styled.h4`
 export const ExperiencePeriod = styled.span`
   font-size: 14px;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-tertiary);
   white-space: nowrap;
 `
 
 export const ExperienceCompany = styled.p`
   font-size: 18px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--text-secondary);
   margin-bottom: 16px;
 
   @media ${props => props.theme.breakpoints.sm} {
@@ -75,7 +75,7 @@ export const ExperiencePoint = styled.li`
   font-size: 16px;
   font-weight: 300;
   line-height: 24px;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-secondary);
   padding-left: 20px;
   position: relative;
 
@@ -113,7 +113,7 @@ export const CertificationItem = styled.li`
   font-size: 16px;
   font-weight: 300;
   line-height: 24px;
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--text-secondary);
   padding-left: 20px;
   position: relative;
 
